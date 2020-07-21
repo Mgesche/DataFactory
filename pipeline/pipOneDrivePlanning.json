@@ -16,13 +16,17 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "Office365Source"
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "Office365Table2",
+						"referenceName": "ExcelPlanning",
 						"type": "DatasetReference"
 					}
 				]
