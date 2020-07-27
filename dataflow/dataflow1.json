@@ -9,16 +9,12 @@
 						"referenceName": "AzureBlobStorage1",
 						"type": "LinkedServiceReference"
 					},
-					"name": "source1"
+					"name": "XLSStaffing"
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "DerivedColumn1"
-				}
-			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'excel',\n\tcontainer: 'conteneurblob',\n\tfileName: 'Planning_ODS.xlsx',\n\tsheetName: 'Export',\n\tfirstRowAsHeader: true) ~> source1\nsource1 derive({_col0_} = year()) ~> DerivedColumn1"
+			"transformations": [],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'excel',\n\tcontainer: 'conteneurblob',\n\tfileName: 'Planning_ODS.xlsx',\n\tsheetName: 'Export',\n\tfirstRowAsHeader: true) ~> XLSStaffing"
 		}
 	}
 }
