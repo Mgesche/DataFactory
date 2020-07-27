@@ -1,8 +1,0 @@
-{
-	"name": "Office365Table2",
-	"properties": {
-		"annotations": [],
-		"type": "Office365Table",
-		"schema": []
-	}
-}
