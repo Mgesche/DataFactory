@@ -12,9 +12,17 @@
 					"name": "XLSStaffing"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SQLPlanning",
+						"type": "DatasetReference"
+					},
+					"name": "SQLPlanning"
+				}
+			],
 			"transformations": [],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'excel',\n\tcontainer: 'conteneurblob',\n\tfileName: 'Planning_ODS.xlsx',\n\tsheetName: 'Export',\n\tfirstRowAsHeader: true) ~> XLSStaffing"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'excel',\n\tcontainer: 'conteneurblob',\n\tfileName: 'Planning_ODS.xlsx',\n\tsheetName: 'Export',\n\tfirstRowAsHeader: true) ~> XLSStaffing\nXLSStaffing sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> SQLPlanning"
 		}
 	}
 }
