@@ -8,10 +8,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Juillet 2020",
+			"sheetName": "Export",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Planning Build & Project Genève.xlsx",
+				"fileName": "Planning_ODS.xlsx",
 				"container": "conteneurblob"
 			}
 		},
