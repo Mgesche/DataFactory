@@ -24,6 +24,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "TRUNCATE TABLE [staffing_stg].[Planning]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
