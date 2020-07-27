@@ -23,7 +23,8 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -53,24 +54,24 @@
 							},
 							{
 								"source": {
-									"type": "DateTime",
+									"type": "String",
 									"ordinal": 3
 								},
 								"sink": {
 									"name": "DtStaffing",
-									"type": "DateTime",
-									"physicalType": "datetime2"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"type": "Double",
+									"type": "String",
 									"ordinal": 4
 								},
 								"sink": {
 									"name": "NbJours",
-									"type": "Decimal",
-									"physicalType": "decimal"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
