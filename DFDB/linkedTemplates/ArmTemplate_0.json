@@ -63,7 +63,8 @@
 						"type": "AzureBlobStorageLocation",
 						"fileName": "Planning_ODS.xlsx",
 						"container": "conteneurblob"
-					}
+					},
+					"firstRowAsHeader": true
 				},
 				"schema": [
 					{
@@ -259,8 +260,9 @@
 								"mappings": [
 									{
 										"source": {
+											"name": "Consultant",
 											"type": "String",
-											"ordinal": 1
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Consultant",
@@ -270,8 +272,9 @@
 									},
 									{
 										"source": {
+											"name": "Affaire",
 											"type": "String",
-											"ordinal": 2
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Affaire",
@@ -281,8 +284,9 @@
 									},
 									{
 										"source": {
+											"name": "DtStaffing",
 											"type": "String",
-											"ordinal": 3
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "DtStaffing",
@@ -292,8 +296,9 @@
 									},
 									{
 										"source": {
+											"name": "NbJours",
 											"type": "String",
-											"ordinal": 4
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "NbJours",
@@ -303,8 +308,9 @@
 									},
 									{
 										"source": {
+											"name": "Client",
 											"type": "String",
-											"ordinal": 5
+											"physicalType": "String"
 										},
 										"sink": {
 											"name": "Client",
