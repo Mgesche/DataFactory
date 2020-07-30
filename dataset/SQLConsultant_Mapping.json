@@ -1,0 +1,29 @@
+{
+	"name": "SQLConsultant_Mapping",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Consultant",
+				"type": "varchar"
+			},
+			{
+				"name": "Prenom",
+				"type": "varchar"
+			},
+			{
+				"name": "Email",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "mapping",
+			"table": "Consultant"
+		}
+	}
+}
