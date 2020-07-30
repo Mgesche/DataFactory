@@ -9,15 +9,11 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
+				"name": "Valeur",
+				"type": "varchar"
+			},
+			{
 				"name": "Consultant",
-				"type": "varchar"
-			},
-			{
-				"name": "Prenom",
-				"type": "varchar"
-			},
-			{
-				"name": "Email",
 				"type": "varchar"
 			}
 		],
