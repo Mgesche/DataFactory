@@ -24,7 +24,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE TABLE [staffing_stg].[Planning]",
+						"preCopyScript": "TRUNCATE TABLE [dim].[Consultant]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -45,48 +45,24 @@
 							},
 							{
 								"source": {
-									"name": "Affaire",
+									"name": "Prenom",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Affaire",
+									"name": "Prenom",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "DtStaffing",
+									"name": "Email",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DtStaffing",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "NbJours",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NbJours",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "Client",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Client",
+									"name": "Email",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -107,37 +83,10 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQLPlanning",
+						"referenceName": "SQLConsultant",
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "ProcessErrors",
-				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "Copy Consultant",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[errors].[ProcessErrors]"
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				}
 			}
 		],
 		"annotations": []
