@@ -1,0 +1,34 @@
+{
+	"name": "ExcelMappingConsultant_Consultant",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Consultant",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Mapping v2.xlsx",
+				"container": "mappingv2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Consultant",
+				"type": "String"
+			},
+			{
+				"name": "Prenom",
+				"type": "String"
+			},
+			{
+				"name": "Email",
+				"type": "String"
+			}
+		]
+	}
+}
